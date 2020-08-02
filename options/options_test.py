@@ -11,7 +11,7 @@ def add_general_arguments(parser):
     # Dataset IO
     parser.add_argument('--input_rgb', type=str, required=True,
                         help="Input RGB filename patterns, e.g., '/path/to/images/*_rgb.png'")
-    parser.add_argument('--input_mask', type=str, required=False,
+    parser.add_argument('--input_mask', type=str, required=True,
                         help=("Corresponding mask filename patterns, e.g., '/path/to/images/*_mask.png'. "
                               "For MarrNet/ShapeHD, masks are not required, so used only for bbox cropping. "
                               "For GenRe, masks are input together with RGB"))
