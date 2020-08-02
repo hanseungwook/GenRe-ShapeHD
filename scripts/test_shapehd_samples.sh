@@ -24,7 +24,6 @@ python 'test.py' \
     --net_file "$net2" \
     --marrnet1_file "$net1" \
     --input_rgb "$rgb_pattern" \
-    # --input_mask "$mask_pattern" \
     --output_dir "$out_dir" \
     --suffix '{net}' \
     --overwrite \
