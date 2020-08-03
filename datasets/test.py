@@ -21,9 +21,9 @@ class Dataset(data.Dataset):
         
         for k in required:
             type2filename[k] = getattr(opt, 'input_' + k)
-        del type2filename['input_mask']
         # Generate a sorted filelist for each data type
         type2files = {}
+
         for k, v in type2filename.items():
             type2files[k] = sorted(glob(v))
         ns = [len(x) for x in type2files.values()]
