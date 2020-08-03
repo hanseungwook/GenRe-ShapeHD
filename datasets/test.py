@@ -18,6 +18,7 @@ class Dataset(data.Dataset):
 
         # Associate each data type required by the model with input paths
         type2filename = {}
+        del type2filename['input_mask']
         for k in required:
             type2filename[k] = getattr(opt, 'input_' + k)
 
