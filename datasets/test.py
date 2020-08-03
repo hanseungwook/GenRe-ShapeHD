@@ -18,10 +18,10 @@ class Dataset(data.Dataset):
 
         # Associate each data type required by the model with input paths
         type2filename = {}
-        del type2filename['input_mask']
+        
         for k in required:
             type2filename[k] = getattr(opt, 'input_' + k)
-
+        del type2filename['input_mask']
         # Generate a sorted filelist for each data type
         type2files = {}
         for k, v in type2filename.items():
