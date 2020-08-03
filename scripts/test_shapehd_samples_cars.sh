@@ -2,11 +2,11 @@
 
 # Test ShapeHD
 
-out_dir="./output/test_shapehd_samples_cars"
+out_dir="./output/test_shapehd_samples_cars_no_masks"
 net1=./downloads/models/marrnet1_with_minmax.pt
 net2=./downloads/models/shapehd.pt
 rgb_pattern='./downloads/data/test/shapehd_samples_cars/*_rgb.*'
-mask_pattern='./downloads/data/test/shapehd_samples_cars/*_silhouette.*'
+# mask_pattern='./downloads/data/test/shapehd_samples_cars/*_silhouette.*'
 if [ $# -lt 1 ]; then
     echo "Usage: $0 gpu[ ...]"
     exit 1
@@ -24,7 +24,6 @@ python 'test.py' \
     --net_file "$net2" \
     --marrnet1_file "$net1" \
     --input_rgb "$rgb_pattern" \
-    --input_mask "$mask_pattern" \
     --output_dir "$out_dir" \
     --suffix '{net}' \
     --overwrite \
